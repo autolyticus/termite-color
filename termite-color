@@ -22,6 +22,27 @@ insertColor() {
 	} >> "$CONFIGFILE"
 }
 
+UserColor="default"
+
+while getopts "c:d:" opt; do
+	case "${opt}" in
+		c)
+			echo "Colour = $OPTARG"
+			UserColor="$OPTARG"
+			;;
+		d)
+			echo "Directory = $OPTARG"
+			CONFIGDIR="$(realpath "$OPTARG")"
+			;;
+		:)
+			echo "Option -$OPTARG requires an argument"
+			;;
+		\?)	echo "Usage incorrect"
+			exit 1
+			;;
+	esac
+done
+
 if [ ! -d "$CONFIGDIR" ]; then
 	echo "Termite config folder doesn't exist"
 	read -p "Should I create it?" -n 1 -r

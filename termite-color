@@ -6,15 +6,18 @@ COLORDIR="$MYDIR/colors"
 CONFIGDIR="$HOME/.config/termite"
 CONFIGFILE="$CONFIGDIR/config"
 
+BEGDELIM='###BEGINNING###termite-color###'
+ENDDELIM='###END###termite-color###'
+COLORTAG='\[colors\]'
 
-BEGDELIM="###BEGINNING###termite-color###"
-ENDDELIM="###END###termite-color###"
 insertColor() {
 	colorName="$@"
 	{
 		echo "$BEGDELIM"
+		echo
 		echo "###COLOR###$colorName###"
-		cat "$MYDIR/colors/$colorName"
+		cat "$COLORDIR/$colorName"
+		echo
 		echo "$ENDDELIM"
 	} >> "$CONFIGFILE"
 }

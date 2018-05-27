@@ -1,0 +1,3 @@
+[submodule "base16"]
+	path = base16
+	url = https://github.com/khamer/base16-termite.git

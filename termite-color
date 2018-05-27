@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-COLORDIR="$MYDIR/colors"
+# COLORDIR="$MYDIR/colors"
 
 CONFIGDIR="$HOME/.config/termite"
 CONFIGFILE="$CONFIGDIR/config"
@@ -11,12 +11,12 @@ ENDDELIM='###END###termite-color###'
 COLORTAG='\[colors\]'
 
 insertColor() {
-	colorName="$@"
+	colorFile="$@"
 	{
 		echo "$BEGDELIM"
 		echo
 		echo "###COLOR###$colorName###"
-		cat "$COLORDIR/$colorName"
+		cat "$colorFile"
 		echo
 		echo "$ENDDELIM"
 	} >> "$CONFIGFILE"

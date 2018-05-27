@@ -22,26 +22,28 @@ insertColor() {
 	} >> "$CONFIGFILE"
 }
 
-UserColor="default"
+if [ -z "$@" ]; then
+	UserColor="colors/default"
+else
+	UserColor="$@"
+	echo "Setting color $@"
+fi
 
-while getopts "c:d:" opt; do
-	case "${opt}" in
-		c)
-			echo "Colour = $OPTARG"
-			UserColor="$OPTARG"
-			;;
-		d)
-			echo "Directory = $OPTARG"
-			CONFIGDIR="$(realpath "$OPTARG")"
-			;;
-		:)
-			echo "Option -$OPTARG requires an argument"
-			;;
-		\?)	echo "Usage incorrect"
-			exit 1
-			;;
-	esac
-done
+# while getopts "c:d:" opt; do
+# 	case "${opt}" in
+# 		c)
+# 			echo "Colour = $OPTARG"
+# 			UserColor="$OPTARG"
+# 			;;
+# 		:)
+# 			echo "Option -$OPTARG requires an argument"
+# 			;;
+# 		\?)	echo "Usage incorrect"
+# 			exit 1
+# 			;;
+# 	esac
+# done
+
 
 if [ ! -d "$CONFIGDIR" ]; then
 	echo "Termite config folder doesn't exist"

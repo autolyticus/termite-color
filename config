@@ -8,43 +8,52 @@ font = FantasqueSansMono Nerd Font Mono, 14
 
 ###COLOR######
 [colors]
+# Base16 Gruvbox dark, pale
+# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-# special
-foreground      = #d0d0d0
-foreground_bold = #d0d0d0
-cursor          = #d0d0d0
-background      = #151515
+foreground      = #dab997
+foreground_bold = #d5c4a1
+cursor          = #d5c4a1
+background      = #262626
 
-# black
-color0  = #151515
-color8  = #505050
+# 16 color space
 
-# red
-color1  = #ac4142
-color9  = #ac4142
+# Black, Gray, Silver, White
+color0  = #262626
+color8  = #8a8a8a
+color7  = #dab997
+color15 = #ebdbb2
 
-# green
-color2  = #90a959
-color10 = #90a959
+# Red
+color1  = #d75f5f
+color9  = #d75f5f
 
-# yellow
-color3  = #f4bf75
-color11 = #f4bf75
+# Green
+color2  = #afaf00
+color10 = #afaf00
 
-# blue
-color4  = #6a9fb5
-color12 = #6a9fb5
+# Yellow
+color3  = #ffaf00
+color11 = #ffaf00
 
-# magenta
-color5  = #aa759f
-color13 = #aa759f
+# Blue
+color4  = #83adad
+color12 = #83adad
 
-# cyan
-color6  = #75b5aa
-color14 = #75b5aa
+# Purple
+color5  = #d485ad
+color13 = #d485ad
 
-# white
-color7  = #d0d0d0
-color15 = #f5f5f5
+# Teal
+color6  = #85ad85
+color14 = #85ad85
+
+# Extra colors
+color16 = #ff8700
+color17 = #d65d0e
+color18 = #3a3a3a
+color19 = #4e4e4e
+color20 = #949494
+color21 = #d5c4a1
 
 ###END###termite-color###

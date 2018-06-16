@@ -1,6 +1,13 @@
 # termite-color
 A shell script to painlessly switch between termite color schemes
 
+#### Pre-requisites: 
+
+ - fzf
+ - bash
+ - Termite (obviously)
+
+
 Clone this repo to your termite config folder for seamless integration.
 
 1. First backup your termite config folder
@@ -15,22 +22,20 @@ git clone https://github.com/reisub0/termite-color .config/termite
 ```
 cp ~/.config/termite.bak/config ~/.config/termite/
 ```
+4. (Optional) Make a symlink to /usr/bin so that you can execute it easily
+```
+ln -s ~/.config/termite/termite-color /usr/bin/termite-color
+```
 
-
-
-
-
-Then,
-
+Then you can execute it simply with 
+<br/>
+```
+termite-color
+```
+If you followed step 4
+(OR)
 ```
 cd ~/.config/termite
-
-./termite-color -c <color-file>
+./termite-color
 ```
-
-For example,
-```
-./termite-color -c colors/nord
-```
-
-If you wish, you may specify an alternate config folder with `-d` flag.
+If you haven't

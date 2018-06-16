@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
 
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# COLORDIR="$MYDIR/colors"
+
+detectColorDir() {
+	if [ -d "$MYDIR/colors" ]; then
+		echo "$MYDIR/colors"
+	else if [ -d "$HOME/.config/termite/colors" ]; then
+			echo "$HOME/.config/termite/colors"
+		else
+			echo "Unable to detect colors directory. Termite-color is now exiting"
+			exit 1
+		fi
+	fi
+}
+
+COLORDIR="$(detectColorDir)"
 
 CONFIGDIR="$HOME/.config/termite"
 CONFIGFILE="$CONFIGDIR/config"
@@ -12,21 +25,23 @@ COLORTAG='\[colors\]'
 
 insertColor() {
 	colorFile="$@"
+	colorName="$(basename $colorFile)"
+	colorName="$(echo "$colorName" | cut -f1 -d.)"
+	echo "Setting color $colorName"
 	{
 		echo "$BEGDELIM"
 		echo
 		echo "###COLOR###$colorName###"
-		cat "$colorFile"
+		cat "$COLORDIR/$colorFile"
 		echo
 		echo "$ENDDELIM"
 	} >> "$CONFIGFILE"
 }
 
 if [ -z "$@" ]; then
-	UserColor="colors/default"
+	UserColor=$((cd "$COLORDIR" || exit; find -type f -name '*.config')  | fzf --prompt='Choose theme: ')
 else
 	UserColor="$@"
-	echo "Setting color $@"
 fi
 
 # while getopts "c:d:" opt; do

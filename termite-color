@@ -38,11 +38,19 @@ insertColor() {
 	} >> "$CONFIGFILE"
 }
 
+getCurrentTheme() {
+	grep 'COLOR' "$CONFIGFILE" | cut -d'#' -f7
+}
+
+
 if [ -z "$@" ]; then
-	UserColor=$((cd "$COLORDIR" || exit; find -type f -name '*.config')  | fzf --prompt='Choose theme: ')
-else
-	UserColor="$@"
+	echo -n 'Current Theme: '
+	getCurrentTheme
+	exit 0
 fi
+
+UserColor=$((cd "$COLORDIR" || exit; find -type f -name '*.config')  | fzf --prompt='Choose theme: ')
+
 
 # while getopts "c:d:" opt; do
 # 	case "${opt}" in

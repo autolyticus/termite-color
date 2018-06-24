@@ -30,12 +30,17 @@ ln -s ~/.config/termite/termite-color /usr/bin/termite-color
 Then you can execute it simply with 
 <br/>
 ```
-termite-color
+termite-color set
 ```
 If you followed step 4
 (OR)
 ```
 cd ~/.config/termite
-./termite-color
+./termite-color set
 ```
 If you haven't
+
+To see the currently applied theme
+```
+termite-color
+```

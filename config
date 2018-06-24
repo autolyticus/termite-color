@@ -6,54 +6,45 @@ search_wrap = true
 font = FantasqueSansMono Nerd Font Mono, 14
 ###BEGINNING###termite-color###
 
-###COLOR###base16-bespin###
+###COLOR###default###
 [colors]
-# Base16 Bespin
-# Author: Jan T. Sott
 
-foreground      = #8a8986
-foreground_bold = #9d9b97
-cursor          = #9d9b97
-background      = #28211c
+# special
+foreground      = #d0d0d0
+foreground_bold = #d0d0d0
+cursor          = #d0d0d0
+background      = #151515
 
-# 16 color space
+# black
+color0  = #151515
+color8  = #505050
 
-# Black, Gray, Silver, White
-color0  = #28211c
-color8  = #666666
-color7  = #8a8986
-color15 = #baae9e
+# red
+color1  = #ac4142
+color9  = #ac4142
 
-# Red
-color1  = #cf6a4c
-color9  = #cf6a4c
+# green
+color2  = #90a959
+color10 = #90a959
 
-# Green
-color2  = #54be0d
-color10 = #54be0d
+# yellow
+color3  = #f4bf75
+color11 = #f4bf75
 
-# Yellow
-color3  = #f9ee98
-color11 = #f9ee98
+# blue
+color4  = #6a9fb5
+color12 = #6a9fb5
 
-# Blue
-color4  = #5ea6ea
-color12 = #5ea6ea
+# magenta
+color5  = #aa759f
+color13 = #aa759f
 
-# Purple
-color5  = #9b859d
-color13 = #9b859d
+# cyan
+color6  = #75b5aa
+color14 = #75b5aa
 
-# Teal
-color6  = #afc4db
-color14 = #afc4db
-
-# Extra colors
-color16 = #cf7d34
-color17 = #937121
-color18 = #36312e
-color19 = #5e5d5c
-color20 = #797977
-color21 = #9d9b97
+# white
+color7  = #d0d0d0
+color15 = #f5f5f5
 
 ###END###termite-color###

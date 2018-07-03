@@ -8,7 +8,9 @@ A shell script to painlessly switch between termite color schemes
  - Termite (obviously)
 
 
-Clone this repo to your termite config folder for seamless integration.
+Recommended: Clone this repo to your termite config folder for seamless integration.
+
+#### Installation:
 
 1. First backup your termite config folder
 ```
@@ -27,7 +29,7 @@ cp ~/.config/termite.bak/config ~/.config/termite/
 sudo ln -s ~/.config/termite/termite-color /usr/bin/termite-color
 ```
 
-Then you can execute it simply with 
+#### Usage:
 
 If you followed step 4
 (OR)
